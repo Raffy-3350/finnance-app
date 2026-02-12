@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Jar - Home</title>
+    <link rel="stylesheet" href="primary.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="app-container">
+      <div class="header flex-between">
+        <h2>Hello, John Doe</h2>
+        <div class="header-icons">
+          <i class="fa-solid fa-gear"></i>
+          <a href="login.html"
+            ><i class="fa-solid fa-arrow-right-from-bracket"></i
+          ></a>
+        </div>
+      </div>
+
+      <div class="balance-card">
+        <div class="card-pill">
+          <i class="fa-regular fa-credit-card"></i> ****99256
+        </div>
+        <div class="balance-label">My Balance</div>
+        
+        <div class="balance-amount">
+          <span id="balanceAmount">&#8369; 7,000.00</span>
+          <i class="fa-regular fa-eye-slash eye-icon" id="eyeIcon"></i>
+        </div>
+
+        <div class="action-row">
+          <div class="action-item">
+            <i class="fa-solid fa-wallet"></i>
+            <span>Topup</span>
+          </div>
+          <div class="action-item">
+            <i class="fa-regular fa-paper-plane"></i>
+            <span>Send</span>
+          </div>
+          <div class="action-item">
+            <i class="fa-solid fa-money-bill-transfer"></i>
+            <span>Withdraw</span>
+          </div>
+          <div class="action-item">
+            <i class="fa-solid fa-piggy-bank"></i>
+            <span>Coin Bank</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h3>Your Goal</h3>
+        <a href="#">View All ></a>
+      </div>
+
+      <div class="goals-grid">
+        <div class="goal-card">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Tuition</span>
+        </div>
+        <div class="goal-card">
+          <i class="fa-solid fa-motorcycle"></i>
+          <span>Vehicle</span>
+        </div>
+        <div class="goal-card">
+          <i class="fa-solid fa-house"></i>
+          <span>Rent</span>
+        </div>
+        <div class="goal-card">
+          <i class="fa-solid fa-ellipsis"></i>
+          <span>Others</span>
+        </div>
+      </div>
+
+      <div class="section-header">
+        <h3>Transactions</h3>
+        <a href="#">See All ></a>
+      </div>
+
+      <div class="transaction-list">
+        <div class="transaction-item">
+          <div class="t-icon">
+            <i class="fa-solid fa-motorcycle"></i>
+          </div>
+          <div class="t-details">You withdraw from Vehicle</div>
+          <div class="t-amount">-4,000</div>
+        </div>
+        <div class="transaction-item">
+          <div class="t-icon">
+            <i class="fa-solid fa-house"></i>
+          </div>
+          <div class="t-details">You withdraw from Rent</div>
+          <div class="t-amount">-2,000</div>
+        </div>
+        <div class="transaction-item">
+          <div class="t-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <div class="t-details">You deposit to Tuition</div>
+          <div class="t-amount">+2,000</div>
+        </div>
+        <div class="transaction-item">
+          <div class="t-icon">
+            <i class="fa-solid fa-house"></i>
+          </div>
+          <div class="t-details">You deposit to Rent</div>
+          <div class="t-amount">+2,000</div>
+        </div>
+      </div>
+
+      <br /><br />
+    </div>
+
+    <script>
+      const balanceSpan = document.getElementById("balanceAmount");
+      const eyeIcon = document.getElementById("eyeIcon");
+      
+      const originalBalance = balanceSpan.innerText;
+      let isHidden = false;
+
+      eyeIcon.addEventListener("click", () => {
+        isHidden = !isHidden;
+        
+        if (isHidden) {
+          // Hide balance
+          balanceSpan.innerText = "*******";
+          eyeIcon.classList.remove("fa-eye-slash");
+          eyeIcon.classList.add("fa-eye");
+        } else {
+          // Show balance
+          balanceSpan.innerText = originalBalance;
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
+        }
+      });
+    </script>
+  </body>
+</html>
